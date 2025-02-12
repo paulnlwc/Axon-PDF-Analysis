@@ -74,7 +74,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Process the PDF
-    let searchResults = [];
+    let searchResults: ProcessResults;
     try {
       const processor = new PDFProcessor(mongoClient);
       searchResults = await processor.processFile(filePath);
