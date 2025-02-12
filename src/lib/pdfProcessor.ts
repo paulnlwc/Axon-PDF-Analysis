@@ -1,7 +1,7 @@
 import { PDFLoader } from '@langchain/community/document_loaders/fs/pdf';
 import { OpenAIEmbeddings } from '@langchain/openai';
 import { MongoClient } from 'mongodb';
-import { Document } from '@langchain/core/documents';
+import { Document } from 'langchain/document';
 
 interface SearchResult {
   id: number;
