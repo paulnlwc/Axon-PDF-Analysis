@@ -9,12 +9,6 @@ import type { ProcessResults } from '../lib/pdfProcessor';
 
 console.log('🏠 Home page component rendered');
 
-interface SearchResult {
-  id: number;
-  similarity: number;
-  content: string;
-}
-
 export default function Home() {
   console.log('🏠 Home page component executing');
   
