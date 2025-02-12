@@ -4,6 +4,7 @@ import { join } from 'path';
 import { mkdir } from 'fs/promises';
 import clientPromise from '../../../lib/mongodb';
 import { PDFProcessor } from '../../../lib/pdfProcessor';
+import type { ProcessResults } from '../../../lib/pdfProcessor';
 
 export async function POST(request: NextRequest) {
   try {

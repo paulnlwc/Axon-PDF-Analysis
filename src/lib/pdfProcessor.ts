@@ -9,7 +9,7 @@ interface SearchResult {
   content: string;
 }
 
-interface ProcessResults {
+export interface ProcessResults {
   ankiResults: SearchResult[];
   axonResults: SearchResult[];
 }
