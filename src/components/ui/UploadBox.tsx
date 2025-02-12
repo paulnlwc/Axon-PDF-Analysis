@@ -1,9 +1,10 @@
 'use client';
 
 import React, { useCallback, useState } from 'react';
+import type { ProcessResults } from '../../lib/pdfProcessor';
 
 interface UploadBoxProps {
-  onSearchResults?: (results: any[]) => void;
+  onSearchResults?: (results: ProcessResults) => void;
 }
 
 export function UploadBox({ onSearchResults }: UploadBoxProps) {

@@ -5,6 +5,7 @@ import { AnkiResultsPanel } from '../components/ui/AnkiResultsPanel';
 import { AxonResultsPanel } from '../components/ui/AxonResultsPanel';
 import { useState } from 'react';
 import Image from 'next/image';
+import type { ProcessResults } from '../lib/pdfProcessor';
 
 console.log('🏠 Home page component rendered');
 
@@ -14,21 +15,14 @@ interface SearchResult {
   content: string;
 }
 
-interface ProcessResults {
-  ankiResults: SearchResult[];
-  axonResults: SearchResult[];
-}
-
 export default function Home() {
   console.log('🏠 Home page component executing');
   
-  const [ankiResults, setAnkiResults] = useState<SearchResult[]>([]);
-  const [axonResults, setAxonResults] = useState<SearchResult[]>([]);
+  const [results, setResults] = useState<ProcessResults>({ ankiResults: [], axonResults: [] });
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSearchResults = (results: ProcessResults) => {
-    setAnkiResults(results.ankiResults);
-    setAxonResults(results.axonResults);
+    setResults(results);
     setIsLoading(false);
   };
   
@@ -60,8 +54,8 @@ export default function Home() {
           
           <div className="space-y-8">
             <UploadBox onSearchResults={handleSearchResults} />
-            <AnkiResultsPanel results={ankiResults} isLoading={isLoading} />
-            <AxonResultsPanel results={axonResults} isLoading={isLoading} />
+            <AnkiResultsPanel results={results.ankiResults} isLoading={isLoading} />
+            <AxonResultsPanel results={results.axonResults} isLoading={isLoading} />
           </div>
         </main>
       </div>
