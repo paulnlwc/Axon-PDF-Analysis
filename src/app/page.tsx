@@ -41,8 +41,17 @@ export default function Home() {
             <h1 className="text-4xl font-bold mb-4 text-black">
               Axon PDF Analysis
             </h1>
-            <p className="text-lg text-black">
+            <p className="text-lg text-black mb-2">
               Upload your medical lecture PDF to find relevant Anki cards and Axon questions
+            </p>
+            <p className="text-sm text-gray-600">
+              Questions or comments? Email us at{' '}
+              <a 
+                href="mailto:paul@axonlearning.ai"
+                className="text-blue-600 hover:underline"
+              >
+                paul@axonlearning.ai
+              </a>
             </p>
           </div>
           
